@@ -41,4 +41,4 @@ To launch the app, simply run the application from visual studio.
 
 
  ***Note: Update the google maps api key with valid one.*** <br>
- Replace the valid key with "API-Key" in ~LandmarkRemark/LandmarkRemark/ClientApp/src/app/landmark/landmark.module.ts
+ Replace the "Api-key" with valid value in  ~/LandmarkRemark/LandmarkRemark/ClientApp/src/app/landmark/landmark.module.ts
