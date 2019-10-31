@@ -40,4 +40,4 @@ To launch the app, simply run the application from visual studio.
  - Tests 1 hour
 
 
- Note: Update the google maps api key with valid one.
+ ***Note: Update the google maps api key with valid one.***
