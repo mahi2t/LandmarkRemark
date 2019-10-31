@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="col-xs-6">
+    <form class="wrapper loginwrapper" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h2 class="col-lg-4">Login</h2>
+      <div class="form-group col-lg-4">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" placeholder="Your username" onfocus="this.placeholder = ''"
+               onblur="this.placeholder = 'Your username'" class="form-control">
+        <div *ngIf="loginForm.controls['username'].touched && loginForm.controls['username'].errors">
+          <div class="text-danger"
+               [ngStyle]="{ 'display':  loginForm.controls['username'].errors?.required ? 'inherit': 'none' }">
+            This field is required
+          </div>
+          <div class="text-danger"
+               [ngStyle]="{ 'display': loginForm.controls['username'].errors?.pattern ? 'inherit' : 'none' }">
+            Please enter a valid email.
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-lg-4">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" placeholder="Your password" onfocus="this.placeholder = ''"
+               onblur="this.placeholder = 'Your password'" class="form-control"
+               [ngClass]="{ 'is-invalid': loginForm.controls['password'].touched && loginForm.controls['password'].errors?.required }">
+        <div class="text-danger"
+             [ngStyle]="{ 'display': loginForm.controls['password'].touched && loginForm.controls['password'].errors?.required ? 'inherit': 'none' }">
+          This field is required
+        </div>
+      </div>
+      <div class="form-group col-lg-4">
+        <button type="submit" name="button" class="btn btn-primary btn-lg">{{ submitting ? 'Logging you in' :
+        'Login' }}</button>
+      </div>
+      <div *ngIf="errorMessage" class="col-lg-4 text-danger">{{ errorMessage }}</div>
+    </form>
+  </div>
+</div>

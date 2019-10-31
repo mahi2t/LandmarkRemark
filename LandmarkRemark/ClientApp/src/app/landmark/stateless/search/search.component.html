@@ -1,0 +1,9 @@
+<div class="input-group pr-2">
+  <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Search for remark"
+         onblur="this.placeholder = 'Search for remark'" onfocus="this.placeholder = ''">
+  <div class="input-group-append">
+    <button class="btn btn-secondary" (click)="onSearch(searchText)" type="button">
+      search
+    </button>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="pr-2 pt-2">
+  <div *ngIf="errorMessage" class="text-danger">  {{errorMessage}}</div>
+  <form [formGroup]="addNoteForm" class="wrapper" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <textarea type="text" formControlName="note" placeholder="Enter your remark for the location" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Enter your remark for the location'" class="form-control"></textarea>
+      <div class="text-danger"
+           [ngStyle]="{ 'display': addNoteForm.controls['note'].touched && addNoteForm.controls['note'].errors?.required ? 'inherit': 'none' }">
+        This field is required
+      </div>
+    </div>
+    <div class="form-group float-right">
+      <button type="submit" name="button" class="btn btn-primary btn-sm">Add Marker</button>
+    </div>
+  </form>
+</div>

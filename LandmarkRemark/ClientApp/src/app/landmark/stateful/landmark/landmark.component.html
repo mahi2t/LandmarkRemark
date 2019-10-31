@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <app-map (searchClicked)="onSearchClicked($event)" [markersList]="noteList"
+               (markedAdded)="onMarkerAdded($event)" [email]="email" [latitude]="latitude" [longitude]="longitude"></app-map>
+      <app-add-note [message]="message" (addClicked)="onAddClicked($event)"></app-add-note>
+    </div>
+    <div class="col-xs-6 ml-2">
+      <app-remark-list [noteList]="noteList"></app-remark-list>
+    </div>
+  </div>
+</div>

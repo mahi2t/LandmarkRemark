@@ -1,0 +1,26 @@
+<div *ngIf="noteList && noteList?.length > 0" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      Remarks
+    </h3>
+  </div>
+  <div class="panel-body">
+    <ul *ngFor="let note of noteList" class="list-group">
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-xs-10 col-md-11">
+            <div>
+              <span class="text-primary">{{note.remark}}</span>
+              <div class="mic-info">
+                By: <span class="text-secondary"><strong>{{note.fullName}}</strong></span> on <span class="text-info">{{note.createdDate | date: 'dd/MM/yyyy HH:MM:ss'}}</span>
+              </div>
+            </div>
+            <div class="comment-text">
+            </div>
+
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

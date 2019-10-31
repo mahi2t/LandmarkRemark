@@ -1,0 +1,11 @@
+<header class="header clear" role="banner">
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Landmark Remarks</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a routerLink="/account/register" [ngStyle]="{ 'display': userLoggedIn ? 'none' : 'inherit' }" routerLinkActive="Active" class="p-2 text-dark">Register</a>
+     <span *ngIf="userLoggedIn"> Welcome <strong>{{userName}}</strong></span>
+    </nav>
+    <a role="button" class="btn btn-outline-primary" [ngStyle]="{ 'display': !userLoggedIn ? 'none' : 'inherit' }" (click)="logOut()">Logout</a>
+    <a role="button" class="btn btn-outline-primary" [ngStyle]="{ 'display': userLoggedIn ? 'none' : 'inherit' }" routerLink="/account/login">Login</a>
+  </div>
+</header>
